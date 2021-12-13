@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
@@ -43,7 +44,9 @@
     <div class="containern m-0 p-0">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         
-
+        <div class="lg">
+          <a href="/home"><img src="{% static 'ProyectoWebApp/logo.png' %}"></a>
+        </div>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li class={% if request.path == '/home/' %} active {% endif %}><a href="{% url 'Home' %}" class="nav-link px-2">Inicio</a></li>
           <li class={% if request.path == '/categorias/' %} active {% endif %}><a href="{% url 'Categorias' %}" class="nav-link px-2">Categorias</a></li>
@@ -62,8 +65,9 @@
             <li><a class="dropdown-item" href="#">Nueva publicación</a></li>
             <li><a class="dropdown-item" href="#">Mi perfil</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/registro/">Iniciar Sesión</a></li>
-            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            <li><a class="dropdown-item" href="/register/">Registrarme</a></li>
+            <li><a class="dropdown-item" href="/login/">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="/logout/">Cerrar Sesión</a></li>
           </ul>
         </div>
       </div>
