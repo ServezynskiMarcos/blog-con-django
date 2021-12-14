@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import UserRegisterForm
 from django.contrib import messages
+from django.contrib.auth.models import User
+
+
 
 
 def register(request):
@@ -10,8 +13,10 @@ def register(request):
 		if form.is_valid():
 			form.save()
 			username = form.cleaned_data['username']
-			messages.success(request, f'Usuario {username} creado')
+			messages.success(request, 'Te has resistrado con exito')
 			return redirect('/home')
+
+	
 	else:
 		form = UserRegisterForm()
 
