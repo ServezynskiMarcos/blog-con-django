@@ -11,7 +11,11 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
 
+<<<<<<< HEAD
     {% csrf_token %}    
+=======
+    
+>>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
 
 {%load static%}
     <!-- Bootstrap core CSS -->
@@ -52,11 +56,17 @@
           <li class={% if request.path == '/populares/' %} active {% endif %}><a href="{% url 'Populares' %}" class="nav-link px-2">Mas Populares</a></li>
       
         </ul>
+<<<<<<< HEAD
         
 
         <form action= "/resultado_busqueda/" method= "GET" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
       
           <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="nombre">
+=======
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input href="/busqueda/" type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+>>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
 
         </form>    
         <div class="dropdown text-end">

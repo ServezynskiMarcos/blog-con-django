@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ProyectoWebApp',
+<<<<<<< HEAD
     'registroApp.apps.RegistroConfig',
+=======
+    'registroApp',
+>>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
     'ProfileApp',
     
 ]
@@ -80,9 +84,15 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+<<<<<<< HEAD
         'NAME':'bloginfo',
         'USER': 'root',
         'PASSWORD': 'root',
+=======
+        'NAME':'proyecto',
+        'USER': 'root',
+        'PASSWORD': '29carlos712',
+>>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
         'HOST': 'localhost',
         'PORT': ''
     }
