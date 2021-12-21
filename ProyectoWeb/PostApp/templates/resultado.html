@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>POSTS</title>
+        {% load static %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    
+</head>
+{%if categoria%}
+{%for post in categoria %}
+<body>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+    <div class="col-md-7">
+        <div class="social-feed-separated">
+            <div class="social-avatar">
+                <a href="">
+                    <img alt="image" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                </a>
+            </div>
+            <div class="social-feed-box">
+                <div>
+                    <a href="#"><h2 class="userp">{{post.user.username}}</h2></a>
+                    <small class="text-muted"><time>{{post.fecha}}</time> CATEGORIA: <a href="">{{post.categoria}}</a></small>
+                </div>
+
+                <div> 
+                    <h1>{{post.titulo}}</h1>
+                    <img src="{{post.image.url}}" id="cg" alt="img">
+                </div>    
+                    
+                <div class="social-body">
+                    <p> {{post.texto}} </p>
+                </div>
+                    
+               
+                <div class="btn-group">
+                    <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
+                    <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
+                    <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> Share</button>
+                </div>
+
+            </div>
+
+            <div class="social-footer">
+                <div class="social-comment">
+                    <a href="" class="pull-left">
+                        <img alt="image" src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                    </a>
+                    <div class="media-body">
+                        <a href="#">
+                            Andrew Williams
+                        </a>
+                        Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.
+                        <br>
+                        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 26 Like this!</a> -
+                        <small class="text-muted">12.06.2014</small>
+                    </div>
+                </div>
+
+                <div class="social-comment">
+                    <a href="" class="pull-left">
+                        <img alt="image" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                    </a>
+                    <div class="media-body">
+                        <a href="#">
+                            Andrew Williams
+                        </a>
+                        Making this the first true generator on the Internet. It uses a dictionary of.
+                        <br>
+                        <a href="#" class="small"><i class="fa fa-thumbs-up"></i> 11 Like this!</a> -
+                        <small class="text-muted">10.07.2014</small>
+                    </div>
+                </div>
+
+                <div class="social-comment">
+                    <a href="" class="pull-left">
+                        <img alt="image" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                    </a>
+                    <div class="media-body">
+                        <textarea class="form-control" placeholder="Write comment..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endfor%}
+{%endif%}
+
+
+</body>
+</html>

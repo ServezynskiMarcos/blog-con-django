@@ -10,7 +10,6 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li class={% if request.path == '/home/' %} active {% endif %}><a href="{% url 'Home' %}" class="nav-link px-2">Inicio</a></li>
           <li class={% if request.path == '/categorias/' %} active {% endif %}><a href="{% url 'Categorias' %}" class="nav-link px-2">Categorias</a></li>
-          <li class={% if request.path == '/populares/' %} active {% endif %}><a href="{% url 'Populares' %}" class="nav-link px-2">Mas Populares</a></li>
       
         </ul>
         

@@ -81,10 +81,10 @@ max-width: 100%;
 
 }
 
-/*.containerfooter{
+.containerfooter{
   
   margin-top: 100vh;
-}*/
+}
 .dropdown-menu{
  background-color: #ffffff;
 }
@@ -112,6 +112,6 @@ max-width: 100%;
 
 .nav-scroller .nav .p-3{
   font-size: 18px;
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }

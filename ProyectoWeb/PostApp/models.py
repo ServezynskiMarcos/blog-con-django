@@ -17,7 +17,7 @@ class Post(models.Model):
     fecha = models.DateField(default= timezone.now)
     texto = models.TextField()
     categoria = models.CharField(max_length=40, choices=Categorias, default='Pobreza')
-    image = models.ImageField(upload_to='PostApp/static/img', null=True)
+    image = models.ImageField(upload_to='imag_blog', null=True)
 
 
     def __str__(self):

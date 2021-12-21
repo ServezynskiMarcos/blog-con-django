@@ -2,10 +2,10 @@ from functools import cache
 from django.shortcuts import render, redirect
 
 from PostApp.forms import ComentarioForm
-from .models import *
+from .models import Post, Comentario, Profile
 
 
-def posteos(request, id):
+"""def posteos(request, id):
     try:
         posts = ExistePost(id)
     except Exception:
@@ -27,7 +27,7 @@ def posteos(request, id):
         'posts': posts,
         'coments': coments,
     }
-    return render(request, 'post.html', context)
+    return render(request, 'post.html', context)"""
 
 
 def ExistePost(id):
@@ -35,3 +35,18 @@ def ExistePost(id):
         if i.id == id:
             return i
     return None
+
+def busqueda_post(request):
+    return render(request, "busqueda_blog.html")
+def post_categoria(request):
+    if request.GET["Categoria"]:
+        cat= request.GET["Categoria"]
+        try:
+            posts = ExistePost(cat)
+        except Exception:
+            posts = Post.objects.filter(categoria__icontains=cat)
+            return render(request, "resultado.html", {"categoria":posts, "query":cat})
+
+def destacados(request):
+
+    return render(request, 'destacados.html' )
