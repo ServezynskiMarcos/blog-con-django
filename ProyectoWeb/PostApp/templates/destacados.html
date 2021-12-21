@@ -1,61 +1,208 @@
-{% extends 'ProyectoWebApp/base.html' %}
-{%load static%}
-
-{%block content%}
-<header class="p-2 border-buttom">
-    <div class="containern m-0 p-0">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        
-        
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li class={% if request.path == '/home/' %} active {% endif %}><a href="{% url 'Home' %}" class="nav-link px-2">Inicio</a></li>
-          <li class={% if request.path == '/categorias/' %} active {% endif %}><a href="{% url 'Categorias' %}" class="nav-link px-2">Categorias</a></li>
-      
-        </ul>
-     
-
-        <form action= "/resultado_busqueda/" method= "GET" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-      
-          <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="nombre">
-
-        </form>    
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://www.pngkit.com/png/full/940-9406687_already-a-proact-user-employee-icon-white-png.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="#">Nueva publicación</a></li>
-            <li><a class="dropdown-item" href='/profile/'>Mi perfil</a></li>
-            <li><hr class="dropdown-divider"></li>
-            {% if request.user.is_authenticated %}
-            <li><a class="dropdown-item" href="/logout/">Cerrar Sesión</a></li>
-            {% else %}
-            <li><a class="dropdown-item" href="/login/">Iniciar Sesión</a></li>
-            <li><a class="dropdown-item" href="/register/">Crear Cuenta</a></li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Shop Homepage - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        {% load static %}
+        <link href="{% static 'css/styls.css' %}" rel="stylesheet">
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">CATEGORIAS</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Posts INFO 2021</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                  <!--POBREZA-->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/my.png'%}" alt="pobreza" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!--name-->
+                                    <h5 class="fw-bolder">POBREZA</h5>
     
-</header>
+                                </div>
+                            </div>
+                            <!-- POBREZA actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Pobreza">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="nav-scroller py-4">
-      <nav class="nav ">
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=pobreza">Pobreza</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Hambre">Hambre</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Salud">Salud</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Educacion">Educacion</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Igualdad de genero">Igualdad de genero</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Agua">Agua<Agua/a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Energía">Energía</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Economía">Economía</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Infraestructura">Infraestructura</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Desigualdad">Desigualdad</a><br>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Ciudades">Ciudades</a>
-          <a class="p-3 link-secondary" href="/resultado_categoria/?Categoria=Consumo">Consumo</a>
-      </nav>
-  </div>
-      
-  
-{% endblock %}
+
+                    <!--HAMBRE-->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/hambre.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">HAMBRE</h5>
+                                    
+                                
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Hambre">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--SALUD-->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                      
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/salud.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">SALUD</h5>
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Salud">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--EDUCACIÓN-->  
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/educacion.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">EDUCACIÓN</h5>
+                                    <!-- Product reviews-->
+                                    
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Educacion">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ECONOMIA-->
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/economia.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">ECONOMÍA</h5>
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Economia">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--DESIGUALDAD-->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/sad.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">DESIGUALDAD</h5>
+                                    
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Desigualdad">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--IGUALDAD DE genero-->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/igualdad.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">IGUALDAD DE GENERO</h5>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Igualdad de genero">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--INFRAESTRUCTURA-->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'img/estr.png'%}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">INFRAESTRUCTURA</h5>
+                                   
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/resultado_categoria/?Categoria=Infraestructura">ir</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

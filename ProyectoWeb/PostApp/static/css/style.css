@@ -11,9 +11,9 @@ body{
       padding: 0;
     }
     .social-feed-separated .social-avatar img {
-      width: 52px;
-      height: 52px;
-      border: 1px solid #e7eaec;
+      width: 60px;
+      height: 60px;
+  
     }
     .social-feed-separated .social-feed-box .social-avatar {
       padding: 15px 15px 0 15px;
