@@ -3,17 +3,58 @@
 {%block content%}
     <link href="{% static 'ProyectoWebApp/blog.css' %}" rel="stylesheet">
 
-<main class="container">
-  <div class="bc p-4 p-md-5 mb-4 text-white rounded"> 
-      <img src="https://blog.oxfamintermon.org/wp-content/uploads/2017/09/torres-verdes-china.jpg" class="imag">
-    <div class="col-md-6 px-0">
+<section class="top">
+  <header class="hd border-buttom">
+    <div class="containern">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li class={% if request.path == '/home/' %} active {% endif %}><a href="{% url 'Home' %}" class="nav-link px-2">Inicio</a></li>
+          <li class={% if request.path == '/categorias/' %} active {% endif %}><a href="{% url 'Categorias' %}" class="nav-link px-2">Categorias</a></li>
+          <li class={% if request.path == '/populares/' %} active {% endif %}><a href="{% url 'Populares' %}" class="nav-link px-2">Mas Populares</a></li>
+      
+        </ul>
+        
+
+        <form action= "/resultado_busqueda/" method= "GET" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      
+          <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="nombre">
+
+        </form>    
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://www.pngkit.com/png/full/940-9406687_already-a-proact-user-employee-icon-white-png.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">Nueva publicación</a></li>
+            <li><a class="dropdown-item" href='/profile/'>Mi perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            {% if request.user.is_authenticated %}
+            <li><a class="dropdown-item" href="/logout/">Cerrar Sesión</a></li>
+            {% else %}
+            <li><a class="dropdown-item" href="/login/">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="/register/">Crear Cuenta</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+</header>
+
+  <div class="bc p-4 p-md-5 rounded"> 
+    <img class= "imag" src="{% static 'ProyectoWebApp/img.png' %}">
+    <div class="colt">
        
-      <h1 class="display-4 fst-italic">TITULO del blog destacado</h1>
-      <p class="lead my-3">{% lorem  %}</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue leyendo...</a></p>
+      <h1 class="display-4 fst-italic">BLOG INFO 2021</h1>
+      <a href="#seccion-2">Posts</a>
     </div>
   </div>
-
+  <div class="wave">
+    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+  </div>
+</section>
+<section id="seccion-2">
+<main class="container">
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -141,6 +182,6 @@
       </div>
     </div>
   </div>
-
+</section>
 </main>
 {% endblock %}

@@ -1,23 +1,12 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, HttpResponse
 from .models import *
 from django.contrib import messages
 from registroApp.forms import UserRegisterForm
-=======
-from django.shortcuts import render, redirect
-from .models import *
-from .forms import UserRegisterForm
-from django.contrib import messages
->>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
 from django.contrib.auth.models import User
 
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
 def register(request):
 	if request.method == 'POST':
 		form = UserRegisterForm(request.POST)
@@ -25,11 +14,7 @@ def register(request):
 			form.save()
 			username = form.cleaned_data['username']
 			messages.success(request, 'Te has resistrado con exito')
-<<<<<<< HEAD
 			return redirect('/login')
-=======
-			return redirect('/home')
->>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276
 
 	
 	else:
@@ -37,7 +22,6 @@ def register(request):
 
 	context = { 'form' : form }
 	return render(request, 'social/register.html', context)
-<<<<<<< HEAD
 
 def buscar(request):
     if request.GET["nombre"]:
@@ -46,7 +30,7 @@ def buscar(request):
         if len(name) > 20:
             mensaje="Ha sobrepasado el numero de caracteres maximos permitidos"
             print(mensaje)
-            
+        
         else:
             
             user = User.objects.filter(username__icontains=name)
@@ -57,10 +41,10 @@ def buscar(request):
         mensaje = "No has ingresado nada"
         return HttpResponse(mensaje)
 
+            
+
 	
         
 
 	
         
-=======
->>>>>>> 732b6feb14bda8c0de7b1637c5c386b277fa1276

@@ -269,7 +269,7 @@ footer{
   color: white;
   text-align: center;
   font-size: .875em;
-  margin: 40px 0;
+  margin-top: 29%;
 }
 
 footer p {
@@ -299,4 +299,12 @@ img.profile{
     width: 95%;
   }
 
+}
+.divider{
+  background-color: #36096d;
+}
+.fin{
+  display: grid;
+   place-content: center;
+  
 }

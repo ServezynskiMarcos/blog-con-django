@@ -58,7 +58,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 4rem;
 }
 .blog-pagination > .btn {
-  border-radius: 2rem;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 30px;
+  width: 150px;
+  border-radius: 50px;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 15px;
+}
+.blog-pagination > .btn:hover{
+  background-color: #000000;
+  color: rgb(255, 255, 255);
 }
 
 /*
@@ -76,4 +89,63 @@ h1, h2, h3, h4, h5, h6 {
   color: #727272;
 }
 
+.bc{
+  color: white;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  height: 400px;
+}
 
+.colt{
+  
+  display: block;
+  width: 50%;
+  padding-top: 101px;
+  padding-bottom: 16px;
+}
+.colt a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #fff;
+  margin-top: 30px;
+  width: 150px;
+  border-radius: 50px;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 15px;
+}
+.colt a:hover{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  
+}
+.imag{
+  
+  float: right;
+  width: 50%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.wave{
+  height: 100px;
+  width: 100%;
+  margin-bottom: 51px;
+
+}
+.top{
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d  74%);
+ 
+}
+.container{
+  margin-top: 700px;
+  
+}
+.hd{
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+}

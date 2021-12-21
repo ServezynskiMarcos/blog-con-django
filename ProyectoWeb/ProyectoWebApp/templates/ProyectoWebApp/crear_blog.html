@@ -2,6 +2,43 @@
 {%load static%}
 
 {%block content%}
+<header class="p-2">
+    <div class="containern m-0 p-0">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li class={% if request.path == '/home/' %} active {% endif %}><a href="{% url 'Home' %}" class="nav-link px-2">Inicio</a></li>
+          <li class={% if request.path == '/categorias/' %} active {% endif %}><a href="{% url 'Categorias' %}" class="nav-link px-2">Categorias</a></li>
+          <li class={% if request.path == '/populares/' %} active {% endif %}><a href="{% url 'Populares' %}" class="nav-link px-2">Mas Populares</a></li>
+      
+        </ul>
+        
+
+        <form action= "/resultado_busqueda/" method= "GET" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+      
+          <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="nombre">
+
+        </form>    
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://www.pngkit.com/png/full/940-9406687_already-a-proact-user-employee-icon-white-png.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">Nueva publicación</a></li>
+            <li><a class="dropdown-item" href='/profile/'>Mi perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            {% if request.user.is_authenticated %}
+            <li><a class="dropdown-item" href="/logout/">Cerrar Sesión</a></li>
+            {% else %}
+            <li><a class="dropdown-item" href="/login/">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="/register/">Crear Cuenta</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+</header>
 <!DOCTYPE html>
 
 

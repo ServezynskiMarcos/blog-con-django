@@ -9,5 +9,6 @@ urlpatterns = [
     path('',include("ProyectoWebApp.urls")),
     path('',include("registroApp.urls")),
     path('',include("ProfileApp.urls")),
+    path('',include("PostApp.urls")),
     
 ]
