@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'registroApp.apps.RegistroConfig',
     'ProfileApp',
     'PostApp.apps.PostappConfig',
-    'media',
+   
+    
     
 ]
 

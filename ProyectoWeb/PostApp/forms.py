@@ -3,12 +3,14 @@ from django import forms
 from .models import Comentario
 
 class ComentarioForm(forms.ModelForm):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['comentario'].widget.attrs.update({'rows': '3'})
-
+    comment = forms.CharField(
+        widget=forms.Textarea(attrs={
+            'class': 'placa',
+            'rows': '1',
+            'placeholder': 'Comentar'
+            }),
+        required=True
+        )
     class Meta:
-        model = Comentario
-        fields = ['comentario']
-        exclude = ['post']
+        model= Comentario
+        fields=['comment']

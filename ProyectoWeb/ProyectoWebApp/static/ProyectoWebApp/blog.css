@@ -124,3 +124,20 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 30px;
   padding-top: 10px;
 }
+
+.bodyblog{ 
+  width: 100%;
+
+}
+.bodyblog img{
+  width: 100%;
+  margin-bottom: 50px;
+}
+.presentacion{
+  text-align: justify;
+  line-height:25px;
+}
+p{
+  text-align: justify;
+  line-height:25px;
+}

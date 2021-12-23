@@ -12,6 +12,8 @@ urlpatterns = [
     path('',include("ProfileApp.urls")),
     path('',include("PostApp.urls")),
     
+
+    
 ]
 
 if settings.DEBUG:
